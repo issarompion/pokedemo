@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700|Nunito:600');
+
+html, body {
+  height: 100%;
+  padding-top: 10px;
+}
+
+#app {
+  height: 100%;
+  padding-top: 0px;
+  font-family: Cinzel Decorative, sans-serif;
+}
+
+#alldata{
+  background: linear-gradient(to bottom right,#1a598b,#9dd1c5);
+}

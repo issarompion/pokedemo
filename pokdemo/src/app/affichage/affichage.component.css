@@ -1,0 +1,91 @@
+
+  .info1{
+    display: table;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1%
+}
+.pic_type{
+    width: 25%;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    border: 3px solid #1a598b ;
+}
+
+.description{
+    width: 75%;
+    display: table-cell;
+    text-align: justify;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+}
+
+p {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 3px;
+    color: black;
+  }
+
+.types{
+    display: table;
+    text-align: center;
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    margin-bottom: 1%
+}
+.type {
+  display: table-cell;
+  width : 50%;
+  font-size: 24px;
+  padding-top: 48px
+}
+
+#z{
+    border: 3px solid #1a598b ;
+}
+
+.info2{
+  display: table;
+  text-align: center;
+  width: 100%;
+  border: 3px solid #1a598b ;
+}
+
+.stats{
+    width: 50%;
+    vertical-align: left;
+    display: table-cell;
+    text-align: center;
+}
+
+.class-moves{
+    width: 50%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    height: 100px;
+}
+
+.move-item{
+  display: table;
+  text-align: center;
+  width: 100%;
+}
+
+.move-item-i{
+    width: 30%;
+    vertical-align: middle;
+    display: table-cell;
+}
+.test{
+  display: table;
+  text-align: center;
+  vertical-align: middle;
+}
