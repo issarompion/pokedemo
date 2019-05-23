@@ -13,13 +13,14 @@ Au départ je suivais à la lettre les questions de TP pour monter en compétenc
 public toString = () : string => {
         return this.nom;
     }
+
 ```
 
 Je traitais donc uniquement sur les pokémons. Ensuite j'ai remarqué que j'aurais pu résoudre le problème en utilisant *[ngValue]* dans l'option du select.
 
 Après cela je trouvais que le select n'était pas trop partique j'ai donc décider mettre un autocomplete de PrimeNG avec un bouton déroulant. Je trouvais la selection de pokémon beaucoup plus simple. J'ai donc laisser tomber le pipe l'autocomplete prime NG proposait déjà une option de filtrage dans une fonction :
 
-```javascript
+```ts
 
   filterPokemon(query, pokemons: Pokemon[]):Pokemon[] {
             //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
