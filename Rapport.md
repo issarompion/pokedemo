@@ -6,8 +6,9 @@ Voici le compte rendu de TP Angular dans le module IHMW. Mon travail à été s�
 
 ## 1.Composant de recherche "my-componant"
 
+```ts
+console.log('test')
+```
+
 Au départ je suivais à la lettre les questions de TP pour monter en compétence sur angular. Je n'ai pas rencontrer de difficulté particulière les premières questions notament grâce a quelque choix de conception. A un moment donné il fallait binder "le choix du dresseur" de la balise <select>. Pour me simplifier les choses j'ai décider de créer une fonction toString() dans ma classe pokémon :
  
- ```javascript
- console.log('test')
- ```
