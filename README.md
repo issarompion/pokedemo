@@ -8,12 +8,12 @@ Voici le compte rendu de TP Angular dans le module IHMW. Mon travail à été s�
 
 Au départ je suivais à la lettre les questions de TP pour monter en compétence sur angular. Je n'ai pas rencontrer de difficulté particulière les premières questions notament grâce a quelque choix de conception. A un moment donné il fallait binder "le choix du dresseur" de la balise <select>. Pour me simplifier les choses j'ai décider de créer une fonction toString() dans ma classe pokémon :
  
- `javascript
+ ```
  
 public toString = () : string => {
         return this.nom;
     }
-`
+```
 
 Je traitais donc uniquement sur les pokémons. Ensuite j'ai remarqué que j'aurais pu résoudre le problème en utilisant *[ngValue]* dans l'option du select.
 
