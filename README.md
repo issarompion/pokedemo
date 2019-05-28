@@ -4,7 +4,7 @@
 
 Dans un terminal : `cd pokdemo/`, `npm run start` et aller à `localhost:4200/` dans un navigateur web.
 
-## introduction
+## Introduction
 
 Voici le compte rendu de TP Angular dans le module IHMW. Mon travail à été séparé en 2 grandes parties qui sont les deux composants que j'ai crée à savoir mon composant de recherche "my-component" et mon composant d'affichage "affichage". Pour chacune des deux parties je présenterais mes choix et les difficultés rencontrées.
 
@@ -40,7 +40,7 @@ filterPokemon(query, pokemons: Pokemon[]):Pokemon[] {
 
 ### 1.2 Le button de lancement
 
-Après avoir choisi son pokémon dans l'autocomplete, le choix est attribué à la variable `choix:Pokemon` et l'utilisateur peu appuyer sur le button de lancement "OK".Ce boutton lance une fonction `go()` qui va permettre de rentre visible mon deuxième composant d'affichage avec un `ngIf` sur la variable `done`. Pour éviter toute erreur, je vérifie quand même que `choix` est bien une instance de pokemon, sinon j'envoie une alerte "Veuillez choisir un pokemon dans la liste" :
+Après avoir choisi son pokémon dans l'autocomplete, le choix est attribué à la variable `choix:Pokemon` et l'utilisateur peu appuyer sur le button de lancement "OK".Ce boutton lance une fonction `go()` qui va permettre de rentre visible mon deuxième composant d'affichage avec un `ngIf` sur la variable `done`. Pour éviter toute erreur, je vérifie quand même que le choix est bien une instance de pokemon, sinon j'envoie une alerte "Veuillez choisir un pokemon dans la liste" :
 
 ```ts
   go() : void {
@@ -58,7 +58,7 @@ Après avoir choisi son pokémon dans l'autocomplete, le choix est attribué à 
 
 ### 1.3 Le pokemon choisi en @Input du composant d'affichage
 
-J'ai décidé de mettre le pokemon choisi en input du composant affichage, pour cela j'ai bindé la variable [ChildPokemon] que j'ai créer dans le composant affichage :
+J'ai décidé de mettre le pokemon choisi en input du composant affichage, pour cela j'ai bindé la variable [ChildPokemon] que j'ai créé dans le composant affichage :
 
 *my-component.component.html*
 ```html
@@ -80,9 +80,9 @@ Plus tard j'ai vu que dans les consignes qu'il était indiqué de créer un serv
 
 Dans le *OnInit()* du composant d'affichage, je m'occupe de récupérer toute les informations à afficher de mon pokemon. Dès lors je me suis dit qu'il fallait que je change un peu ma classe pokémon en lui ajoutant des variables qui corresponderaient à ces infos. Les infos que je voulais récupérer étaient : l'image, le(s) type(s), la description, les stats et les moves.
 
-- Pour l'image et la description c'était simple vu qu'on récuperait une url et une description en string, j'ai donc créer deux variable `img_url`et `text`.
+- Pour l'image et la description c'était simple vu qu'on récuperait une url et une description en string, j'ai donc créer deux variable `img_url:string`et `text:string`.
 
-- Pour le(s) type(s), je me suis dis que cela pouvait être un tableau de `Type` une nouvelle classe, construite avec le `nom:string` et le `style:{}` en css que j'ai récupéré sur un site.
+- Pour le(s) type(s), je me suis dis que cela pouvait être un tableau de `Type`, une nouvelle classe, construite avec le `nom:string` et le `style:{}` en css que j'ai récupéré sur un site.
 
 - Pour les stats, je me suis dis que ce pouvait être un tableau de `Stat`, une nouvelle classe, construite avec le nom:string, la `base_stat:number` et `effort:number`
 
@@ -123,19 +123,36 @@ this.service
     .subscribe(
       data => {
 //...
-for (var i = 0; i < data.types.length ; i++) {
-          this.ChildPokemon.types.push(new Type(data.types[i].type.name))
-         }
+for (var i = 0; i < data.stats.length ; i++) {
+    this.ChildPokemon.stats.push(new Stat(data.stats[i].stat.name,data.stats[i].base_stat,data.stats[i].effort))
+ }
 //...
 }
 )
 ```
 
+Maintenant je peux afficher les informations.
+
 ### 2.2 Affichage de l'image, la description et le(s) type(s)
+
+Ici pas de problème d'affichage, j'ai juste afficher l'image le type et la description avec des composants html classique. ma principale difficulté était de bien les ranger pour que ce soit propre, je n'ai jamais eu de cours d'html donc c'était un peu compliqué au départ.
 
 ### 2.3 Affichage des stats
 
+Ici je me suis dit qu'il pouvait être intéressant d'afficher les stats avec un graphique, j'ai utilisé le **RadarChart** de PrimeNG. J'ai eu pas mal de difficultés rien que dans l'importation du module car, il y avait un problème de version d'Angular. Ensuite il fallait absolument que j'initialise les données du graphique dans le OnInit() juste après avoir récupérer TOUTES les stats parce que le graphique n'était pas dynamique et on ne pouvait pas l'initialiser avant de posseder toute les données. Ce qui me donne un bout de code moche à ajouter dans le for précédent (2.1) :
+
+```ts
+if(this.ChildPokemon.stats.length == data.stats.length){
+            this.radarChartData = [{ data: this.ChildPokemon.getArray(), label: 'Stats' }]
+            // la fonction getArray() renvoi les données dans le bon format de radarChartData
+          }
+```
+
 ### 2.4 Affichage des moves
 
+Enfin j'ai décidé d'afficher les moves avec un **p-virtualScroller** de PrimeNG qui est en fait un tableau déroulant. Et ici aussi j'ai eu le même problème que pour l'affichage des stats à savoir qu'il fallait que j'initialise les données une fois qu'elle était toutes récupérées.
 
+## Conclusion
+
+J'ai beaucoup aprecié le TP et le module en général, il nous a permit de nous familiarisé à Angular et surtout d'avoir un vrai cours sur la programmation web (parce qu'on apprennait un peu par nous même jusque là) et les frameworks utilisés et en particulier sur Angular.
  
