@@ -40,7 +40,7 @@ filterPokemon(query, pokemons: Pokemon[]):Pokemon[] {
 
 ### 1.2 Le button de lancement
 
-Après avoir choisi son pokémon dans l'autocomplete, le choix est attribué à la variable ```ts choix:Pokemon``` et l'utilisateur peu appuyer sur le button de lancement "OK". Ce boutton lance une fonction *go()* qui va permettre de rentre visible mon deuxième composant d'affichage avec un ngIf sur la variable *done*. Pour éviter toute erreur, je vérifie quand même que *choix* est bien une instance de pokemon, sinon j'envoie une alerte "Veuillez choisir un pokemon dans la liste" :
+Après avoir choisi son pokémon dans l'autocomplete, le choix est attribué à la variable `choix:Pokemon` et l'utilisateur peu appuyer sur le button de lancement "OK". Ce boutton lance une fonction `go()` qui va permettre de rentre visible mon deuxième composant d'affichage avec un `ngIf` sur la variable `done`. Pour éviter toute erreur, je vérifie quand même que `choix` est bien une instance de pokemon, sinon j'envoie une alerte "Veuillez choisir un pokemon dans la liste" :
 
   go() : void {
     if(this.choix instanceof Pokemon){
@@ -52,7 +52,7 @@ Après avoir choisi son pokémon dans l'autocomplete, le choix est attribué à 
     } 
   }
   
-  Ce booléen *done*, me permet également de rendre invisible le composant d'affichage si il y a un changement de pokemon dans l'autocomplete avec sa fonction *onChange()*.
+  Ce booléen `done`, me permet également de rendre invisible le composant d'affichage si il y a un changement de pokemon dans l'autocomplete avec sa fonction `onChange()`.
 
 
 ## 2.Composant d'affichage "affichage"
