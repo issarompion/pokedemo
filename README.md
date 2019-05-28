@@ -40,8 +40,9 @@ filterPokemon(query, pokemons: Pokemon[]):Pokemon[] {
 
 ### 1.2 Le button de lancement
 
-Après avoir choisi son pokémon dans l'autocomplete, le choix est attribué à la variable `choix:Pokemon` et l'utilisateur peu appuyer sur le button de lancement "OK". Ce boutton lance une fonction `go()` qui va permettre de rentre visible mon deuxième composant d'affichage avec un `ngIf` sur la variable `done`. Pour éviter toute erreur, je vérifie quand même que `choix` est bien une instance de pokemon, sinon j'envoie une alerte "Veuillez choisir un pokemon dans la liste" :
+Après avoir choisi son pokémon dans l'autocomplete, le choix est attribué à la variable `choix:Pokemon` et l'utilisateur peu appuyer sur le button de lancement "OK".Ce boutton lance une fonction `go()` qui va permettre de rentre visible mon deuxième composant d'affichage avec un `ngIf` sur la variable `done`. Pour éviter toute erreur, je vérifie quand même que `choix` est bien une instance de pokemon, sinon j'envoie une alerte "Veuillez choisir un pokemon dans la liste" :
 
+```ts
   go() : void {
     if(this.choix instanceof Pokemon){
       console.log("go")
@@ -51,13 +52,32 @@ Après avoir choisi son pokémon dans l'autocomplete, le choix est attribué à 
       alert("Veuillez choisir un pokemon dans la liste");
     } 
   }
+```
   
   Ce booléen `done`, me permet également de rendre invisible le composant d'affichage si il y a un changement de pokemon dans l'autocomplete avec sa fonction `onChange()`.
 
+### 1.3 Le pokemon choisi en @Input du composant d'affichage
+
+J'ai décider de mettre le pokemon choisi en input du composant affichage, pour cela j'ai binder la variable [ChildPokemon] que j'ai créer dans le composant affichage :
+
+```html
+<div id = "affichage">
+  <app-affichage *ngIf="done"  [ChildPokemon]="choix"></app-affichage>
+</div> 
+```
+
+```ts
+//affichage.component.ts
+@Input() ChildPokemon: Pokemon;
+```
+
+Plus tard j'ai vu que dans les consignes qu'il était indiqué de créer un service pour partager les informations entre les deux composants. Il fallait créer un observable où le composant d'affichage pouvait y souscrire pour détecter le changement de pokemon. Au final j'ai décidé de garder ma façon de faire car elle me convenait.
 
 ## 2.Composant d'affichage "affichage"
 
 ### 2.1 Modification de la classe Pokemon
+
+
 
 ### 2.2 Affichage de l'image, la description et le(s) type(s)
 
