@@ -2,7 +2,7 @@
 
 ## Run the project
 
-Dans un terminal : `cd pokdemo/`, `npm run start` et aller à `localhost:4200/` dans un navigateur web.
+Dans un terminal : `cd pokdemo/`,`npm install`, `npm run start` et aller à `localhost:4200/` dans un navigateur web.
 
 ## Introduction
 
@@ -150,9 +150,9 @@ if(this.ChildPokemon.stats.length == data.stats.length){
 
 ### 2.4 Affichage des moves
 
-Enfin j'ai décidé d'afficher les moves avec un **p-virtualScroller** de PrimeNG qui est en fait un tableau déroulant. Et ici aussi j'ai eu le même problème que pour l'affichage des stats à savoir qu'il fallait que j'initialise les données une fois qu'elle était toutes récupérées.
+Enfin j'ai décidé d'afficher les moves avec un **p-virtualScroller** de PrimeNG qui est en fait un tableau déroulant. Et ici aussi j'ai eu le même problème que pour l'affichage des stats à savoir qu'il fallait que j'initialise les données une fois qu'elles étaient toutes récupérées.
 
 ## Conclusion
 
-J'ai beaucoup aprecié le TP et le module en général, il nous a permit de nous familiarisé à Angular et surtout d'avoir un vrai cours sur la programmation web (parce qu'on apprennait un peu par nous même jusque là) et les frameworks utilisés et en particulier  Angular.
+J'ai beaucoup apprecié le TP et le module en général, il nous a permit de nous familiarisé à Angular et surtout d'avoir un vrai cours sur la programmation web (parce qu'on apprennait un peu par nous même jusque là) et les frameworks utilisés et en particulier Angular.
  
