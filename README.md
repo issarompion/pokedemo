@@ -84,9 +84,9 @@ Dans le *OnInit()* du composant d'affichage, je m'occupe de récupérer toute le
 
 - Pour le(s) type(s), je me suis dis que cela pouvait être un tableau de `Type`, une nouvelle classe, construite avec le `nom:string` et le `style:{}` en css que j'ai récupéré sur un site.
 
-- Pour les stats, je me suis dis que ce pouvait être un tableau de `Stat`, une nouvelle classe, construite avec le nom:string, la `base_stat:number` et `effort:number`
+- Pour les stats, je me suis dis que ce pouvait être un tableau de `Stat`, une nouvelle classe, construite avec le `nom:string`, la `base_stat:number` et `effort:number`
 
-- Enfin pour les moves, je me suis dis que ce pouvait être un tableau de `Move`, une nouvelle classe, construite avec le nom:string et le `type:Type`
+- Enfin pour les moves, je me suis dis que ce pouvait être un tableau de `Move`, une nouvelle classe, construite avec le `nom:string` et le `type:Type`
 
 J'arrive à la classe pokemon final suivante :
 
@@ -154,5 +154,5 @@ Enfin j'ai décidé d'afficher les moves avec un **p-virtualScroller** de PrimeN
 
 ## Conclusion
 
-J'ai beaucoup aprecié le TP et le module en général, il nous a permit de nous familiarisé à Angular et surtout d'avoir un vrai cours sur la programmation web (parce qu'on apprennait un peu par nous même jusque là) et les frameworks utilisés et en particulier sur Angular.
+J'ai beaucoup aprecié le TP et le module en général, il nous a permit de nous familiarisé à Angular et surtout d'avoir un vrai cours sur la programmation web (parce qu'on apprennait un peu par nous même jusque là) et les frameworks utilisés et en particulier  Angular.
  
