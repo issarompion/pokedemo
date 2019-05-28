@@ -6,15 +6,11 @@ import { ChartDataSets } from 'chart.js';
 export class Pokemon {
     id: number
     nom: string;
-    base_happiness : number; //1) base_happiness
-    capture_rate : number; //1) capture_rate
-    habitat : string; //1) habitat.name
-    text : string; //1) flavor_text_entries[i].flavor_text where flavor_text_entries[i].language.name == "en"
-  
+    text : string;
     img_url : string
-    types : Type[] //2) types[i].type.name
-    stats : Stat[]//2) stats[i].base_stat (number) , stats[i].effort (number) , stats[i].stat.name
-    moves : Move[] //2) moves[i].move.name // moves[i].move.url (https://pokeapi.co/api/v2/move/x/) => type.name
+    types : Type[]
+    stats : Stat[]
+    moves : Move[] 
   
     constructor(id:number,nom: string) {
         this.id = id;

@@ -10,7 +10,7 @@
     vertical-align: middle;
     display: table-cell;
     text-align: center;
-    border: 3px solid #1a598b ;
+    margin-bottom: 1%
 }
 
 .description{
@@ -23,6 +23,7 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   color: black;
+  font-size: 30px;
 }
 
 p {
@@ -55,7 +56,6 @@ p {
   display: table;
   text-align: center;
   width: 100%;
-  border: 3px solid #1a598b ;
 }
 
 .stats{
@@ -63,6 +63,7 @@ p {
     vertical-align: left;
     display: table-cell;
     text-align: center;
+    margin-left : 1%
 }
 
 .class-moves{
@@ -70,7 +71,7 @@ p {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    height: 100px;
+    height: 110%;
 }
 
 .move-item{

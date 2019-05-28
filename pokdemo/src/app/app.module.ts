@@ -19,6 +19,8 @@ import {AutoCompleteModule} from 'primeng/autocomplete';
 import {ButtonModule} from 'primeng/button';
 import { ChartsModule } from 'ng2-charts';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -41,7 +43,10 @@ import {VirtualScrollerModule} from 'primeng/virtualscroller';
     AutoCompleteModule,
     ButtonModule,
     ChartsModule,
-    VirtualScrollerModule
+    VirtualScrollerModule,
+    MatMenuModule,
+    MatIconModule
+
   ],
   providers: [PokeApiServiceService],
   bootstrap: [AppComponent]

@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../pokemon';
 import { PokeApiServiceService } from '../poke-api-service.service'
-import { Move } from '../move';
-import { Stat } from '../stat'
-import { Type } from '../type'
 
 
 @Component({
@@ -19,9 +16,11 @@ export class MyComponentComponent implements OnInit {
 
   id () : string {
     if(this.choix === undefined){
+      this.done = false
       return "ID"
     }else {
       if(this.choix.id === undefined){
+      this.done = false
       return "ID"
       }
       return String(this.choix.id)
@@ -42,7 +41,6 @@ export class MyComponentComponent implements OnInit {
     if(this.choix instanceof Pokemon){
       console.log("go")
       this.done=true
-      this.getinfo()
     }
     else{
       alert("Veuillez choisir un pokemon dans la liste");
@@ -99,10 +97,4 @@ export class MyComponentComponent implements OnInit {
 
   str: string = '';
 
-
-  getinfo(){
-   this.choix.types = []
-    this.choix.stats = []
-    this.choix.moves = []
-}
   }

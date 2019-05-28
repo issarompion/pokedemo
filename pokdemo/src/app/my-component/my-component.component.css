@@ -28,9 +28,10 @@
   
   .text1 {
     display: table-cell;
-    font-size: 64px;
+    font-size: 50px;
     vertical-align: middle;
-    color: #ffcc01
+    font-family: Cinzel Decorative, sans-serif;
+    color: #1a598b
   }
 
   #alldata{
