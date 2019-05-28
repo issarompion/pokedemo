@@ -58,16 +58,17 @@ Après avoir choisi son pokémon dans l'autocomplete, le choix est attribué à 
 
 ### 1.3 Le pokemon choisi en @Input du composant d'affichage
 
-J'ai décider de mettre le pokemon choisi en input du composant affichage, pour cela j'ai binder la variable [ChildPokemon] que j'ai créer dans le composant affichage :
+J'ai décidé de mettre le pokemon choisi en input du composant affichage, pour cela j'ai bindé la variable [ChildPokemon] que j'ai créer dans le composant affichage :
 
+*my-component.component.html*
 ```html
 <div id = "affichage">
   <app-affichage *ngIf="done"  [ChildPokemon]="choix"></app-affichage>
 </div> 
 ```
 
+*affichage.component.ts*
 ```ts
-//affichage.component.ts
 @Input() ChildPokemon: Pokemon;
 ```
 
@@ -77,12 +78,64 @@ Plus tard j'ai vu que dans les consignes qu'il était indiqué de créer un serv
 
 ### 2.1 Modification de la classe Pokemon
 
+Dans le *OnInit()* du composant d'affichage, je m'occupe de récupérer toute les informations à afficher de mon pokemon. Dès lors je me suis dit qu'il fallait que je change un peu ma classe pokémon en lui ajoutant des variables qui corresponderaient à ces infos. Les infos que je voulais récupérer étaient : l'image, le(s) type(s), la description, les stats et les moves.
 
+- Pour l'image et la description c'était simple vu qu'on récuperait une url et une description en string, j'ai donc créer deux variable `img_url`et `text`.
+
+- Pour le(s) type(s), je me suis dis que cela pouvait être un tableau de `Type` une nouvelle classe, construite avec le `nom:string` et le `style:{}` en css que j'ai récupéré sur un site.
+
+- Pour les stats, je me suis dis que ce pouvait être un tableau de `Stat`, une nouvelle classe, construite avec le nom:string, la `base_stat:number` et `effort:number`
+
+- Enfin pour les moves, je me suis dis que ce pouvait être un tableau de `Move`, une nouvelle classe, construite avec le nom:string et le `type:Type`
+
+J'arrive à la classe pokemon final suivante :
+
+```ts
+export class Pokemon {
+    id: number
+    nom: string;
+    text : string;
+    img_url : string
+    types : Type[]
+    stats : Stat[]
+    moves : Move[] 
+  
+    constructor(id:number,nom: string) {
+        this.id = id;
+        this.nom = nom;
+        this.stats = []
+        this.types = []
+        this.moves = []
+    }
+    
+    public toString = () : string => {
+        return this.nom;
+    }
+
+}
+```
+
+A partir de là j'ajoute proprement les informations du pokémon choisi dans le OnInit() d'affichage, en exemple avec :
+
+```ts
+this.service
+    .getListOfGroup(url)
+    .subscribe(
+      data => {
+//...
+for (var i = 0; i < data.types.length ; i++) {
+          this.ChildPokemon.types.push(new Type(data.types[i].type.name))
+         }
+//...
+}
+)
+```
 
 ### 2.2 Affichage de l'image, la description et le(s) type(s)
 
-### 2.3 Affichage des moves
+### 2.3 Affichage des stats
 
-### 2.4 Affichage des stats
+### 2.4 Affichage des moves
+
 
  
