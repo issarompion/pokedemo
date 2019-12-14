@@ -2,7 +2,7 @@
 
 ## Run the project
 
-Dans un terminal : `cd pokdemo/`,`npm install`, `npm run start` et aller à `localhost:4200/` dans un navigateur web.
+Dans un terminal : `npm install`, `npm run start` et aller à `localhost:4200/` dans un navigateur web.
 
 ## Introduction
 
