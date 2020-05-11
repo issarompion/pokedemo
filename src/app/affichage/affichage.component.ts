@@ -21,7 +21,8 @@ import { fillProperties } from '@angular/core/src/util/property';
 export class AffichageComponent implements OnInit {
 
   @Input() ChildPokemon: Pokemon;
-  done :Boolean;
+  done : Boolean;
+  isActive : Boolean = true
 
   //IMAGE
   img_url () : string{
